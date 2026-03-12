@@ -1,68 +1,102 @@
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
 #include <openssl/ssl.h>
 #include <openssl/err.h>
-#include <string.h>
-#include <unistd.h>
-#include <arpa/inet.h>
 
 static SSL_CTX *ctx = NULL;
 
-void tls_init()
-{
+/* ---------------------------------------------------------
+   Initialize OpenSSL (required before any TLS operations)
+   --------------------------------------------------------- */
+void tls_init(void) {
     SSL_library_init();
     SSL_load_error_strings();
     OpenSSL_add_all_algorithms();
-    ctx = SSL_CTX_new(TLS_client_method());
+
+    ctx = SSL_CTX_new(TLS_method());
+    if (!ctx) {
+        ERR_print_errors_fp(stderr);
+    }
 }
 
-int tls_connect(const char *host, int port)
-{
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
-
+/* ---------------------------------------------------------
+   Create a TCP listening socket (no TLS handshake yet)
+   --------------------------------------------------------- */
+int tls_listen(int port) {
+    int sock;
     struct sockaddr_in addr;
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-    inet_pton(AF_INET, host, &addr.sin_addr);
 
-    if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) != 0)
-        return -1;
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) return -1;
 
-    SSL *ssl = SSL_new(ctx);
-    SSL_set_fd(ssl, sock);
+    memset(&addr, 0, sizeof(addr));
+    addr.sin_family      = AF_INET;
+    addr.sin_port        = htons(port);
+    addr.sin_addr.s_addr = INADDR_ANY;
 
-    if (SSL_connect(ssl) <= 0)
+    if (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0)
         return -2;
 
-    return (int)(intptr_t)ssl;
+    if (listen(sock, 5) < 0)
+        return -3;
+
+    return sock;
 }
 
-int tls_accept(int client_sock)
-{
-    SSL *ssl = SSL_new(ctx);
-    SSL_set_fd(ssl, client_sock);
-
-    if (SSL_accept(ssl) <= 0)
-        return -1;
-
-    return (int)(intptr_t)ssl;
+/* ---------------------------------------------------------
+   Accept a TCP client (no TLS handshake yet)
+   --------------------------------------------------------- */
+int tls_accept(int server) {
+    int client = accept(server, NULL, NULL);
+    if (client < 0) return -1;
+    return client;
 }
 
-int tls_send(int ssl_handle, const void *buf, int len)
-{
-    SSL *ssl = (SSL*)(intptr_t)ssl_handle;
-    return SSL_write(ssl, buf, len);
+/* ---------------------------------------------------------
+   Connect to a remote TCP server (no TLS handshake yet)
+   --------------------------------------------------------- */
+int tls_connect(const char *host, int port) {
+    int sock;
+    struct sockaddr_in addr;
+
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) return -1;
+
+    memset(&addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;
+    addr.sin_port   = htons(port);
+
+    if (inet_pton(AF_INET, host, &addr.sin_addr) <= 0)
+        return -2;
+
+    if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0)
+        return -3;
+
+    return sock;
 }
 
-int tls_recv(int ssl_handle, void *buf, int maxlen)
-{
-    SSL *ssl = (SSL*)(intptr_t)ssl_handle;
-    return SSL_read(ssl, buf, maxlen);
+/* ---------------------------------------------------------
+   Send raw bytes over TCP
+   --------------------------------------------------------- */
+int tls_send(int sock, const char *buf, int len) {
+    return send(sock, buf, len, 0);
 }
 
-void tls_close(int ssl_handle)
-{
-    SSL *ssl = (SSL*)(intptr_t)ssl_handle;
-    int sock = SSL_get_fd(ssl);
-    SSL_shutdown(ssl);
-    SSL_free(ssl);
+/* ---------------------------------------------------------
+   Receive raw bytes over TCP
+   --------------------------------------------------------- */
+int tls_recv(int sock, char *buf, int maxlen) {
+    return recv(sock, buf, maxlen, 0);
+}
+
+/* ---------------------------------------------------------
+   Close socket
+   --------------------------------------------------------- */
+void tls_close(int sock) {
     close(sock);
 }

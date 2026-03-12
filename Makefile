@@ -1,50 +1,75 @@
-FC = gfortran
-CC = gcc
+# ============================
+#   GF‑MECA TLS Makefile
+# ============================
 
-CFLAGS = -Wall -O2
-FFLAGS = -Wall -O2
+FC      = gfortran
+CC      = gcc
+FFLAGS  = -Wall -O2
+CFLAGS  = -Wall -O2
+LDFLAGS = -lssl -lcrypto
 
-SSL_LIBS = -lssl -lcrypto
+# Output directory
+BUILDDIR = build
 
-SRC_F90 = \
-    net/core/tcp.f90 \
-    net/core/tls.f90 \
-    net/server/router.f90 \
-    net/server/tls_server.f90 \
-    net/client/tls_module.f90 \
-    net/client/tls_client.f90
+# Source files
+CORE_F90   = net/core/tcp.f90 net/core/tls.f90
+SERVER_F90 = net/server/router.f90 net/server/tls_server.f90
+CLIENT_F90 = net/client/tls_client.f90
+C_WRAPPERS = net/c/tcp_wrapper.c net/c/tls_wrapper.c
 
-SRC_C = \
-    net/c/tls_wrapper.c \
-    net/c/tcp_wrapper.c
-OBJ_F90 = $(SRC_F90:.f90=.o)
-OBJ_C = $(SRC_C:.c=.o)
+# Object files
+CORE_OBJ   = $(CORE_F90:.f90=.o)
+SERVER_OBJ = $(SERVER_F90:.f90=.o)
+CLIENT_OBJ = $(CLIENT_F90:.f90=.o)
+C_OBJ      = $(C_WRAPPERS:.c=.o)
 
-BUILD_DIR = build
+# Targets
+SERVER_BIN = $(BUILDDIR)/tls_server
+CLIENT_BIN = $(BUILDDIR)/tls_client
 
-all: dirs tls_server tls_client
+# ============================
+#   Default target
+# ============================
+all: $(BUILDDIR) $(SERVER_BIN) $(CLIENT_BIN)
 
-dirs:
-	mkdir -p $(BUILD_DIR)
+# ============================
+#   Build server
+# ============================
+$(SERVER_BIN): $(C_OBJ) $(CORE_OBJ) $(SERVER_OBJ)
+	$(FC) $(C_OBJ) $(CORE_OBJ) $(SERVER_OBJ) $(LDFLAGS) -o $@
 
-tls_wrapper.o: net/c/tls_wrapper.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# ============================
+#   Build client
+# ============================
+$(CLIENT_BIN): $(C_OBJ) $(CORE_OBJ) $(CLIENT_OBJ)
+	$(FC) $(C_OBJ) $(CORE_OBJ) $(CLIENT_OBJ) $(LDFLAGS) -o $@
 
+# ============================
+#   Compile Fortran modules
+# ============================
 %.o: %.f90
 	$(FC) $(FFLAGS) -c $< -o $@
 
-tls_server: tls_wrapper.o net/c/tcp_wrapper.o net/core/tcp.o net/core/tls.o net/server/router.o net/server/tls_server.o
-	$(FC) $^ $(SSL_LIBS) -o $(BUILD_DIR)/tls_server
+# ============================
+#   Compile C wrappers
+# ============================
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-tls_client: tls_wrapper.o net/core/tls.o net/client/tls_client.o
-	$(FC) $^ $(SSL_LIBS) -o $(BUILD_DIR)/tls_client
+# ============================
+#   Create build directory
+# ============================
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR)
 
+# ============================
+#   Clean
+# ============================
 clean:
 	rm -f net/**/*.o net/**/*.mod tls_wrapper.o
-	rm -rf $(BUILD_DIR)
+	rm -rf $(BUILDDIR)
 
-run_server:
-	$(BUILD_DIR)/tls_server
-
-run_client:
-	$(BUILD_DIR)/tls_client
+# ============================
+#   Rebuild
+# ============================
+rebuild: clean all
