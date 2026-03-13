@@ -23,6 +23,7 @@ L’API deviendra une boîte à outils polyvalente, capable de supporter des pro
 - **Submission (587/TLS)** — envoi sécurisé moderne
 
 ### 🌍 Services web & cloud
+- **TCP/TLS sécurisé** — communications simples ou avancées avec chiffrement automatique
 - **HTTP/HTTPS** — requêtes simples ou avancées
 - **WebSocket (WS/WSS)** — communication temps réel
 - **REST/JSON** — API modernes
