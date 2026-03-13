@@ -1,8 +1,6 @@
-# GF‑Fortran‑SDK 
+# GF‑Fortran‑SDK (Fortran95)
 
 ### En cours de développement...  Currently in development...
-
-## GF‑Fortran‑SDK (Fortran95) — README (FR/EN)
 
 ---
 
