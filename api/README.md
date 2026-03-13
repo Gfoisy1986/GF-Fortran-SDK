@@ -1,6 +1,6 @@
 # **README.md — API (en développement)**
 
-```markdown
+
 # API Layer (en développement)
 
 La section **api/** accueillera une couche d’abstraction haut niveau destinée à simplifier l’utilisation du backend réseau du projet.  
