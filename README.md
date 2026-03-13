@@ -1,87 +1,99 @@
-# **GF‑Fortran-SDK**
+# **GF‑Fortran‑SDK 🚀**  
+### *Fortran95 SDK — Bilingual README (FR/EN)*
 
+---
 
-## 🚀 **Vision du projet**
+# 🇫🇷 **Version Française**
 
+## **GF‑Fortran‑SDK 🚀 — Vision du projet**
 GF‑Fortran‑SDK a pour ambition de devenir un **écosystème complet** pour développer des applications modernes en Fortran95.  
-Le projet dépasse largement la simple notion “d’outils réseau” : il vise à offrir un **SDK modulaire**, clair et extensible, regroupant tout ce dont un développeur Fortran a besoin pour créer des applications réseau, graphiques et interactives.
+Le projet dépasse largement la simple notion “d’outils réseau” : il vise à offrir un **SDK modulaire, clair et extensible**, regroupant tout ce dont un développeur Fortran a besoin pour créer des applications réseau, graphiques et interactives.
 
-L’objectif est de fournir :
+### 🧱 Backend réseau moderne
+- Modules indépendants : **TCP**, **TLS**, **WebSocket**  
+- Wrappers C minimalistes pour contourner les limites du standard F95  
+- Architecture propre, stable et maintenable  
+- Gestion multi‑clients via `select()`  
+- WebSocket conforme **RFC 6455**
 
-### 🧱 **Un backend réseau moderne et portable**
-- Modules indépendants pour **TCP**, **TLS**, **WebSocket**
-- Wrappers C minimalistes pour combler les limites du standard Fortran
-- Architecture propre, stable et facile à maintenir
-
-### 🧩 **Une API haut niveau simple et intuitive**
-Inspirée de la simplicité de PureBasic, permettant d’écrire :
+### 🧩 API haut niveau intuitive
+Inspirée de PureBasic, elle masque toute la complexité interne :
 
 ```fortran
-conn = OpenNetworkConnection("example.com", 443, useTLS=.true.)
+conn = OpenNetworkConnection("example.com", 443, useTLS = .true.)
 call SendString(conn, "ping")
 reply = ReceiveString(conn)
 ```
 
-Sans jamais exposer la complexité interne.
+### 🎨 Future API UI (f90GL)
+Pour créer des interfaces modernes :  
+Fenêtres, boutons, labels, sliders, layout automatique, intégration réseau.
 
-### 🎨 **Une future API UI basée sur f90GL**
-Pour créer des interfaces graphiques modernes en Fortran :
+### 🌐 Protocoles futurs
+HTTP/HTTPS, MQTT, CoAP, POP3/SMTP/IMAP, Redis, Memcached, WebSocket avancé, services cloud.
 
-- Fenêtres  
-- Boutons  
-- Labels  
-- Sliders  
-- Layout automatique  
-- Intégration directe avec l’API réseau  
+### 🛠️ Environnement complet
+IDE spécialisé, templates de projets, documentation claire, exemples complets, API stable.
 
-### 🌐 **Support futur de protocoles standards**
-Le SDK est pensé pour évoluer vers :
+### 📌 État actuel
+- Serveur **WebSocket (WSS)** fonctionnel  
+- Client réseau en développement  
+- Backend TCP/TLS en refonte  
+- Réorganisation du dépôt en cours  
+- API haut niveau en conception
 
-- HTTP/HTTPS  
-- MQTT  
-- CoAP  
-- POP3 / SMTP / IMAP  
-- Redis / Memcached  
-- WebSocket avancé  
-- Services cloud  
+### 🧰 Technologies
+Fortran 95+, C Wrappers, OpenSSL, select(), WebSocket RFC 6455.
 
-### 🛠️ **Un environnement complet pour Fortran moderne**
-À long terme, GF‑Fortran‑SDK vise à offrir :
-
-- Un **IDE spécialisé** 
-- Des **templates de projets** (UI, réseau, agents, outils)  
-- Une **documentation claire**  
-- Des **exemples complets**  
-- Une **API stable** pour construire des applications robustes et performantes  
+### 📦 Dépendances
+GNU Fortran (recommandé), Intel Fortran, LLVM Flang.
 
 ---
 
-## 🧩 **État actuel**
-- Serveur WebSocket (WSS) fonctionnel  
-- Client réseau propre en développement  
-- Backend TCP/TLS stable  (nouvelle version en cour)
-- Nettoyage et réorganisation du dépôt en cours  
-- API haut niveau en réflexion (`OpenNetworkConnection()`, etc.)
+# 🇬🇧 **English Version**
+
+## **GF‑Fortran‑SDK 🚀 — Project Vision**
+GF‑Fortran‑SDK aims to become a **complete ecosystem** for building modern applications in Fortran95.  
+It goes far beyond “network tools”: the goal is to provide a **modular, clean, and extensible SDK** that gives Fortran developers everything they need to build networked, graphical, and interactive applications.
+
+### 🧱 Modern Network Backend
+- Independent modules: **TCP**, **TLS**, **WebSocket**  
+- Minimal C wrappers to overcome F95 limitations  
+- Clean, stable, maintainable architecture  
+- Multi‑client handling via `select()`  
+- WebSocket compliant with **RFC 6455**
+
+### 🧩 Simple and intuitive high‑level API
+Inspired by PureBasic, hiding all internal complexity:
+
+```fortran
+conn = OpenNetworkConnection("example.com", 443, useTLS = .true.)
+call SendString(conn, "ping")
+reply = ReceiveString(conn)
+```
+
+### 🎨 Future UI API (f90GL)
+For building modern graphical interfaces:  
+Windows, buttons, labels, sliders, automatic layout, network integration.
+
+### 🌐 Future protocol support
+HTTP/HTTPS, MQTT, CoAP, POP3/SMTP/IMAP, Redis, Memcached, advanced WebSocket, cloud services.
+
+### 🛠️ Complete environment
+Specialized IDE, project templates, clear documentation, full examples, stable API.
+
+### 📌 Current status
+- Functional **WebSocket (WSS)** server  
+- Network client in development  
+- TCP/TLS backend being redesigned  
+- Repository cleanup in progress  
+- High‑level API under design
+
+### 🧰 Technologies
+Fortran 95+, C Wrappers, OpenSSL, select(), WebSocket RFC 6455.
+
+### 📦 Dependencies
+GNU Fortran (recommended), Intel Fortran, LLVM Flang.
 
 ---
 
-## 🛠️ **Technologies**
-- **Fortran 95+**  
-- **C Wrappers** (TCP, TLS, Crypto)  
-- **OpenSSL** (TLS, SHA‑1, Base64)  
-- **Select()** pour la gestion multi‑clients  
-- **WebSocket RFC 6455** (handshake + framing)
-
-
----
-
-## Dépendances externes
-
-GF‑Fortran‑SDK nécessite un compilateur Fortran compatible F95 ou supérieur :
-- GNU Fortran (recommandé)
-- Intel Fortran
-- LLVM Flang
-
----
-
-Guillaume Foisy
