@@ -1,6 +1,3 @@
-# ✅ **README bilingue FR/EN — Version finale (Méthode 1)**
-
-```markdown
 # GF‑Fortran‑SDK 🚀  
 ### Fortran95 SDK — Bilingual README (FR/EN)
 
@@ -173,7 +170,7 @@ Windows, buttons, labels, sliders, automatic layout, network integration.
 - LLVM Flang  
 
 </details>
-```
+
 
 ---
 
