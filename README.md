@@ -2,7 +2,7 @@
 
 ### En cours de développement...  Currently in development...
 
-## Fortran95 SDK — Bilingual README (FR/EN)
+## GF‑Fortran‑SDK (Fortran95) — README (FR/EN)
 
 ---
 
