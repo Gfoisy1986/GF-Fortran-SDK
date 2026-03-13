@@ -52,7 +52,7 @@ Le SDK est pensé pour évoluer vers :
 ### 🛠️ **Un environnement complet pour Fortran moderne**
 À long terme, GF‑Fortran‑SDK vise à offrir :
 
-- Un **IDE spécialisé** basé sur ton fork de Geany  
+- Un **IDE spécialisé** 
 - Des **templates de projets** (UI, réseau, agents, outils)  
 - Une **documentation claire**  
 - Des **exemples complets**  
