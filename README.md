@@ -1,8 +1,4 @@
 # **GF‑Fortran-SDK**
-Un ensemble d’outils réseau modulaires écrits en **Fortran** avec des **wrappers C**, conçus pour construire des serveurs et clients modernes : TCP, TLS et WebSocket.  
-Le projet met l’accent sur une architecture claire, modulaire et extensible, inspirée des environnements de développement simples comme PureBasic, mais avec la puissance et la performance du backend Fortran/C.
-
----
 
 
 ## 🚀 **Vision du projet**
@@ -57,22 +53,6 @@ Le SDK est pensé pour évoluer vers :
 - Une **documentation claire**  
 - Des **exemples complets**  
 - Une **API stable** pour construire des applications robustes et performantes  
-
----
-
-
-
-## 📁 **Structure actuelle du projet**
-Le dépôt est en cours de restructuration pour séparer clairement les couches :
-
-```
-net/        → Backend bas niveau (TCP, TLS, crypto, wrappers C)
-ws/         → Serveur & client WebSocket (WSS)
-tcp/        → Serveur & client TCP
-tcp-tls/    → Serveur & client TCP+TLS
-```
-
-Chaque section aura son propre README détaillé plus tard.
 
 ---
 
