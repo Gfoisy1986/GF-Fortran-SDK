@@ -1,15 +1,3 @@
-Parfait Foisy — maintenant que j’ai accès au contenu exact de ton dossier `f90gl/source` grâce à l’onglet GitHub ouvert   [github.com](https://github.com/Gfoisy1986/GF-Fortran-SDK/tree/main/f90gl/source), je peux te rédiger un **README officiel pour `ui/`**, cohérent avec ton SDK, ta philosophie, et la structure que tu mets en place.
-
-Voici un README propre, professionnel, clair, qui explique le rôle du module UI dans ton **GF‑Fortran‑SDK**.
-
-Tu peux le mettre dans :
-
-```
-ui/README.md
-```
-
----
-
 # 🎨 **README — UI Module (GF‑Fortran‑SDK)**
 
 ```markdown
