@@ -81,11 +81,40 @@ Fenêtres, boutons, labels, sliders, layout automatique, intégration réseau.
 ---
 
 ## 📦 Dépendances
-- GNU Fortran (recommandé)  
-- Intel Fortran  
-- LLVM Flang  
+- OpenSSL
+- f90gl
 
 ---
+
+## 🧰 Outils inclus dans le SDK
+*(Mémo rapide pour les développeurs)*
+
+### 🔵 Lua — Langage de script (MIT)
+- Léger, rapide, multiplateforme  
+- Parfait pour automatiser les builds, générer du code et écrire des outils internes  
+- Licence MIT très permissive  
+- Intégration simple avec C et Fortran  
+
+### 🟠 NASM — Assembleur x86/x64 (BSD 2‑clause)
+- Assembleur moderne, stable et très utilisé  
+- Idéal pour les routines bas niveau et l’optimisation  
+- Licence BSD très permissive  
+- Facile à redistribuer dans le SDK  
+
+### 🟦 GCC — Compilateur C (GPL)
+- Backend C utilisé pour les wrappers et les modules système  
+- Très portable, fiable et mature  
+- Redistribuable avec simple lien vers les sources GCC  
+
+### 🟩 GFortran — Compilateur Fortran95 (GPL)
+- Compilateur recommandé pour le SDK  
+- Compatible Fortran95+  
+- Redistribuable avec simple lien vers les sources GCC  
+- Base principale pour compiler les modules du SDK  
+
+
+---
+
 
 ## 👤 Auteur
 Guillaume Foisy  
@@ -173,11 +202,41 @@ Windows, buttons, labels, sliders, automatic layout, network integration.
 ---
 
 ## 📦 Dependencies
-- GNU Fortran (recommended)  
-- Intel Fortran  
-- LLVM Flang  
+- OpenSSL
+- f90gl
 
 ---
+
+## 🧰 Tools Included in the SDK  
+
+
+### 🔵 Lua — Scripting Language (MIT License)
+- Lightweight, fast, and fully cross‑platform  
+- Ideal for build automation, code generation, and internal tooling  
+- MIT license (very permissive)  
+- Easy to embed in C applications and integrate with GCC/gfortran  
+
+### 🟠 NASM — x86/x64 Assembler (BSD 2‑Clause License)
+- Modern, stable assembler for low‑level routines  
+- Perfect for performance‑critical code and system‑level modules  
+- BSD license (permissive and redistribution‑friendly)  
+- Simple to package inside the SDK  
+
+### 🟦 GCC — C Compiler (GPL License)
+- Backend used for C wrappers and system modules  
+- Mature, portable, and widely supported  
+- Redistributable as long as a link to GCC source code is provided  
+- Works seamlessly with NASM and Lua tooling  
+
+### 🟩 GFortran — Fortran95 Compiler (GPL License)
+- Recommended compiler for the SDK  
+- Fully compatible with Fortran95+  
+- Redistributable with a link to GCC sources  
+- Core component for building the SDK’s Fortran modules  
+
+
+---
+
 
 ## 👤 Author
 Guillaume Foisy  
