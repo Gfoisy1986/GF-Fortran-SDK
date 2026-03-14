@@ -69,6 +69,33 @@ C’est l’interface destinée aux utilisateurs finaux :
 
 ---
 
+## 6. Core (applications internes, démos avancées)
+📁 `root/src/core/`
+
+Ce dossier contient :
+- prototypes internes
+- démonstrations avancées
+- tests visuels
+- mini-apps techniques
+
+**Important :**
+Ces fichiers **ne font pas partie de l’API publique**.
+Ils servent à valider le SDK, tester les modules et expérimenter.
+
+Pour des exemples simples destinés aux utilisateurs, voir `examples/`.
+
+---
+
+## 7. Examples (exemples simples pour les utilisateurs)
+📁 `root/examples/`
+
+Exemples pédagogiques, minimalistes et faciles à comprendre :
+- comment utiliser un module
+- comment utiliser l’API haut niveau
+- comment intégrer le SDK dans un projet
+
+---
+
 ## Ajouter une nouvelle fonctionnalité
 
 1. **Si la fonctionnalité dépend d’une lib externe :**
@@ -85,6 +112,13 @@ C’est l’interface destinée aux utilisateurs finaux :
 
 5. **Si la fonctionnalité doit être exposée à l’utilisateur final :**
    → ajouter une fonction haut niveau dans `src/api`.
+
+6. **Si tu veux tester ou démontrer la fonctionnalité :**
+   → ajouter une app interne dans `src/core/`.
+
+7. **Si tu veux montrer un exemple simple :**
+   → ajouter un fichier dans `examples/`.
+
 
 ---
 
