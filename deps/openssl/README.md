@@ -15,18 +15,6 @@ installation required.
 This folder currently includes:
 
 - **OpenSSL 3.5.5 (LTS – supported until 2030)**  
-- Precompiled binaries for:
-  - Windows (x64)
-  - Linux (x64)
-  - macOS (Intel/ARM) *(if applicable)*
-
-Each platform folder contains:
-
-```
-bin/      → runtime DLL/so/dylib
-lib/      → static and import libraries
-include/  → OpenSSL public headers
-```
 
 ---
 
@@ -66,26 +54,6 @@ For more information, visit the official OpenSSL website:
 
 https://www.openssl.org/
 
----
-
-## 📁 Directory Structure
-
-```
-deps/
- └── openssl/
-      ├── windows/
-      │    ├── bin/
-      │    ├── lib/
-      │    └── include/
-      ├── linux/
-      │    ├── bin/
-      │    ├── lib/
-      │    └── include/
-      └── macos/   (optional)
-           ├── bin/
-           ├── lib/
-           └── include/
-```
 
 ---
 

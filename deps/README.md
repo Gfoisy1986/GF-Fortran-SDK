@@ -38,7 +38,7 @@ Contenu :
 
 Version : **OpenSSL 3.5.x LTS (support jusqu’en 2030)**  
 Licence : **Apache 2.0 + OpenSSL Exception**  
-Voir : `deps/openssl/LICENSE`
+Voir : `deps/openssl/LICENSE.txt`
 
 ---
 
@@ -51,13 +51,8 @@ Utilisé pour :
 - Visualisation  
 - Modules UI futurs du SDK
 
-Contenu :
 
-- `bin/`  
-- `lib/`  
-- `include/`  
-
-Licence : incluse dans `deps/f90gl/LICENSE`
+Licence : incluse dans `deps/f90gl/LICENSE.txt`
 
 ---
 
@@ -71,40 +66,6 @@ Licence : incluse dans `deps/f90gl/LICENSE`
 
 ---
 
-## 🛠️ Scripts de compilation
-
-Le SDK inclut des scripts permettant de reconstruire les dépendances depuis les sources :
-
-- `build_openssl_windows.ps1`  
-- `build_openssl_linux.sh`  
-- *(optionnel)* scripts de build pour f90GL
-
-Ces scripts téléchargent, compilent et installent les bibliothèques dans  
-`deps/<librairie>/<plateforme>/`.
-
----
-
-## 📁 Structure du répertoire
-
-```
-deps/
- ├── openssl/
- │    ├── windows/
- │    ├── linux/
- │    └── macos/   (optionnel)
- └── f90gl/
-      ├── windows/
-      ├── linux/
-      └── macos/   (optionnel)
-```
-
-Chaque plateforme contient :
-
-- `bin/`  
-- `lib/`  
-- `include/`
-
----
 
 ## 🤝 Crédits
 
@@ -147,15 +108,10 @@ Used for:
 - Certificate handling  
 - Cryptographic primitives (SHA, AES, RSA, etc.)
 
-Contents:
-
-- `bin/` → DLL / SO / DYLIB  
-- `lib/` → static and import libraries  
-- `include/` → OpenSSL public headers  
 
 Version: **OpenSSL 3.5.x LTS (supported until 2030)**  
 License: **Apache 2.0 + OpenSSL Exception**  
-See: `deps/openssl/LICENSE`
+See: `deps/openssl/LICENSE.txt`
 
 ---
 
@@ -168,13 +124,7 @@ Used for:
 - Visualization  
 - Future UI modules in the SDK
 
-Contents:
-
-- `bin/`  
-- `lib/`  
-- `include/`  
-
-License: included in `deps/f90gl/LICENSE`
+License: included in `deps/f90gl/LICENSE.txt`
 
 ---
 
@@ -188,40 +138,6 @@ License: included in `deps/f90gl/LICENSE`
 
 ---
 
-## 🛠️ Build Scripts
-
-The SDK includes helper scripts to rebuild dependencies from source:
-
-- `build_openssl_windows.ps1`  
-- `build_openssl_linux.sh`  
-- *(optional)* f90GL build scripts
-
-These scripts download, compile, and install the libraries into  
-`deps/<library>/<platform>/`.
-
----
-
-## 📁 Directory Structure
-
-```
-deps/
- ├── openssl/
- │    ├── windows/
- │    ├── linux/
- │    └── macos/   (optional)
- └── f90gl/
-      ├── windows/
-      ├── linux/
-      └── macos/   (optional)
-```
-
-Each platform folder contains:
-
-- `bin/`  
-- `lib/`  
-- `include/`
-
----
 
 ## 🤝 Credits
 
