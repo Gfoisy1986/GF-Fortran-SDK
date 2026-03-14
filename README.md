@@ -90,7 +90,7 @@ Fenêtres, boutons, labels, sliders, layout automatique, intégration réseau.
 
 ## 🧰 Outils inclus dans le SDK
 
-### 🔵 Lua — Langage de script (MIT)
+### 🔵 Lua — Langage de script (MIT) Version 5.5.0
 - Léger, rapide, multiplateforme  
 - Parfait pour automatiser les builds, générer du code et écrire des outils internes  
 - Licence MIT très permissive  
@@ -213,7 +213,7 @@ Windows, buttons, labels, sliders, automatic layout, network integration.
 ## 🧰 Tools Included in the SDK  
 
 
-### 🔵 Lua — Scripting Language (MIT License)
+### 🔵 Lua — Scripting Language (MIT License) Version 5.5.0
 - Lightweight, fast, and fully cross‑platform  
 - Ideal for build automation, code generation, and internal tooling  
 - MIT license (very permissive)  
