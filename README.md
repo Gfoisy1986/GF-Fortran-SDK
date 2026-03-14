@@ -31,6 +31,8 @@ Inspirée de PureBasic, elle masque toute la complexité interne :
 conn = OpenNetworkConnection("example.com", 443, useTLS = .true.)
 call SendString(conn, "ping")
 reply = ReceiveString(conn)
+
+etc...
 ```
 
 ---
@@ -151,6 +153,8 @@ Inspired by PureBasic, hiding all internal complexity:
 conn = OpenNetworkConnection("example.com", 443, useTLS = .true.)
 call SendString(conn, "ping")
 reply = ReceiveString(conn)
+
+etc...
 ```
 
 ---
