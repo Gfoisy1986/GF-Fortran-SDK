@@ -87,7 +87,6 @@ Fenêtres, boutons, labels, sliders, layout automatique, intégration réseau.
 ---
 
 ## 🧰 Outils inclus dans le SDK
-*(Mémo rapide pour les développeurs)*
 
 ### 🔵 Lua — Langage de script (MIT)
 - Léger, rapide, multiplateforme  
