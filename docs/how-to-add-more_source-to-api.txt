@@ -1,0 +1,99 @@
+# Architecture du SDK
+
+Ce document décrit la structure interne du SDK et explique comment ajouter de nouvelles fonctionnalités, couches ou modules de manière cohérente et maintenable.
+
+---
+
+## 1. Dépendances natives (C / bibliothèques externes)
+📁 `root/deps/...`
+
+Cette section contient toutes les dépendances externes nécessaires au SDK :
+- bibliothèques C précompilées
+- headers `.h`
+- variantes par plateforme (Windows, Linux, macOS, ARM, RISC-V, BSD/Solaris)
+
+**Rôle :** fournir les briques natives brutes, sans logique SDK.
+
+---
+
+## 2. Wrappers C (couche d’adaptation)
+📁 `root/src/wrappers/c`
+
+Cette couche sert d’interface propre entre les dépendances natives et le reste du SDK :
+- normalisation des signatures
+- encapsulation des détails de plateforme
+- exposition d’une API C stable pour Fortran
+
+**Rôle :** rendre les bibliothèques natives compatibles et sûres pour l’appel Fortran.
+
+---
+
+## 3. Wrappers Fortran (interfaces FFI)
+📁 `root/src/wrappers/fortran`
+
+Cette couche expose les fonctions C au monde Fortran :
+- `interface ... bind(C)`
+- conversion des types C ↔ Fortran
+- gestion des pointeurs, chaînes, tableaux
+
+**Rôle :** fournir une passerelle propre et portable vers les fonctions C.
+
+---
+
+## 4. Modules Fortran (logique intermédiaire)
+📁 `root/src/modules`
+
+Cette couche regroupe les fonctionnalités en modules logiques :
+- helpers
+- abstractions
+- regroupement des fonctions bas niveau
+- simplification des appels FFI
+
+**Rôle :** offrir une API Fortran idiomatique, modulaire et agréable à utiliser.
+
+---
+
+## 5. API haut niveau (SDK final)
+📁 `root/src/api`
+
+C’est l’interface destinée aux utilisateurs finaux :
+- fonctions simples et intuitives
+- structures haut niveau
+- aucune exposition des couches internes
+
+**Rôle :** fournir une API stable, portable et facile à intégrer dans n’importe quel projet.
+
+---
+
+## Ajouter une nouvelle fonctionnalité
+
+1. **Si la fonctionnalité dépend d’une lib externe :**
+   → ajouter la dépendance dans `deps/`.
+
+2. **Si la fonctionnalité nécessite une fonction native :**
+   → créer/mettre à jour un wrapper C dans `src/wrappers/c`.
+
+3. **Si Fortran doit appeler cette fonction :**
+   → ajouter l’interface FFI dans `src/wrappers/fortran`.
+
+4. **Si la fonctionnalité doit être regroupée logiquement :**
+   → créer ou étendre un module dans `src/modules`.
+
+5. **Si la fonctionnalité doit être exposée à l’utilisateur final :**
+   → ajouter une fonction haut niveau dans `src/api`.
+
+---
+
+## Philosophie générale
+
+Chaque couche doit :
+- être indépendante de la couche supérieure
+- cacher les détails de la couche inférieure
+- rester simple, claire et portable
+
+Cette architecture garantit un SDK robuste, maintenable et multiplateforme.
+
+
+---
+
+Guillaume Foisy
