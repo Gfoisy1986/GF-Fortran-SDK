@@ -1,17 +1,33 @@
-# Fortran95 + F90GL UI API (Vision & Concept)
+# Exemples d’utilisation du GF‑Fortran‑SDK
 
-Cette section accueillera une API moderne permettant de créer des interfaces graphiques en Fortran95 en s’appuyant sur **f90GL** (OpenGL pour Fortran).  
-L’objectif est d’offrir une couche simple, intuitive et portable pour concevoir des applications graphiques, des outils internes, des dashboards et des interfaces interactives — tout en restant 100% Fortran.
+Démonstrations, tutoriels et contenu préfabriqué
 
-## 🎯 Vision
-Créer une API haut niveau qui permet d’écrire des interfaces graphiques comme ceci :
+Ce répertoire regroupe des exemples concrets illustrant comment utiliser les différentes fonctionnalités du GF‑Fortran‑SDK.
+Il sert de base pour apprendre, expérimenter et créer rapidement des applications en Fortran utilisant le SDK.
 
-```fortran
-call UI_Begin("Ma Fenêtre", width=800, height=600)
+Les exemples sont conçus pour être :
 
-call UI_Label("Température actuelle : 22.5°C")
-if (UI_Button("Rafraîchir")) then
-    call RefreshData()
-end if
+simples à comprendre
 
-call UI_End()
+directement exécutables
+
+pédagogiques
+
+réutilisables dans des tutoriels ou projets réels
+
+---
+
+
+🎯 Objectifs de cette section
+Montrer comment utiliser les modules du SDK (UI, réseau, outils, etc.)
+
+Fournir des exemples prêts à l’emploi pour les tutoriels et la documentation
+
+Aider les nouveaux utilisateurs à démarrer rapidement
+
+Servir de référence pour les bonnes pratiques d’utilisation du SDK
+
+Tester visuellement et fonctionnellement les fonctionnalités du SDK
+
+
+---

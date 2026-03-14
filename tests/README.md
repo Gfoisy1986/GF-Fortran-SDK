@@ -1,17 +1,19 @@
-# Fortran95 + F90GL UI API (Vision & Concept)
+🧪 Tests — GF‑Fortran‑SDK
+Ce répertoire contient l’ensemble des tests automatisés du GF‑Fortran‑SDK.
+Ils assurent la stabilité, la compatibilité et la maintenabilité des modules du SDK (réseau, API, wrappers C, serveurs, outils, etc.).
 
-Cette section accueillera une API moderne permettant de créer des interfaces graphiques en Fortran95 en s’appuyant sur **f90GL** (OpenGL pour Fortran).  
-L’objectif est d’offrir une couche simple, intuitive et portable pour concevoir des applications graphiques, des outils internes, des dashboards et des interfaces interactives — tout en restant 100% Fortran.
 
-## 🎯 Vision
-Créer une API haut niveau qui permet d’écrire des interfaces graphiques comme ceci :
+---
 
-```fortran
-call UI_Begin("Ma Fenêtre", width=800, height=600)
+🎯 Objectifs des tests
+Vérifier le bon fonctionnement des modules du SDK
 
-call UI_Label("Température actuelle : 22.5°C")
-if (UI_Button("Rafraîchir")) then
-    call RefreshData()
-end if
+Détecter rapidement les régressions lors des mises à jour
 
-call UI_End()
+Valider la compatibilité multi‑plateforme
+
+Fournir des exemples concrets d’utilisation des API du SDK
+
+Servir de base pour l’écriture de nouveaux tests
+
+---
