@@ -15,29 +15,29 @@ BUILDDIR = build
 # ============================
 
 CORE_F90 = \
-    net/core/tcp.f90 \
-    net/core/tls.f90 \
-    net/core/ws_tls_shim.f90
+    wrappers/fortran/tcp.f90 \
+    wrappers/fortran/tls.f90 \
+    wrappers/modules/ws_tls_shim.f90
 
 
 SERVER_F90 = \
-    net/server/client.f90 \
-    net/server/router.f90 \
-    net/server/tls_server.f90 \
-    net/wrapper/select_wrapper.f90 \
-    net/wrapper/crypto_wrapper.f90 \
-    net/websocket/websocket.f90 \
-    net/websocket/websocket_handshake.f90 \
-    net/websocket/wss_server.f90
+    wrappers/fortran/router.f90 \
+    wrappers/fortran/select_wrapper.f90 \
+    wrappers/fortran/crypto_wrapper.f90 \
+    wrappers/fortran/websocket.f90 \
+    wrappers/fortran/websocket_handshake.f90 \
+    wrappers/fortran/wss_server.f90 \
+    wrappers/fortran/client.f90 \
+    core/websoket_server/wss_server.f90
 
 CLIENT_F90 = \
-    net/client/tls_client.f90
+    core/websoket_server/tls_client.f90
 
 C_WRAPPERS = \
-    net/c/tcp_wrapper.c \
-    net/c/tls_wrapper.c \
-    net/c/select_wrapper.c \
-    net/c/crypto_wrapper.c
+    wrappers/c/tcp_wrapper.c \
+    wrappers/c/tls_wrapper.c \
+    wrappers/c/select_wrapper.c \
+    wrappers/c/crypto_wrapper.c
 
 
 # ============================
@@ -50,7 +50,7 @@ CLIENT_OBJ = $(CLIENT_F90:.f90=.o)
 C_OBJ      = $(C_WRAPPERS:.c=.o)
 
 SERVER_BIN = $(BUILDDIR)/wss_server
-CLIENT_BIN = $(BUILDDIR)/tls_client
+CLIENT_BIN = $(BUILDDIR)/wss_client
 
 # ============================
 #   Default target
