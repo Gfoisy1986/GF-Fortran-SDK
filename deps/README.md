@@ -8,21 +8,16 @@
   
 # Dépendances externes — GF‑Fortran‑SDK
 
-Ce répertoire contient toutes les **bibliothèques tierces** intégrées au  
-**GF‑Fortran‑SDK**, afin d’offrir une expérience de développement complète,  
-multiplateforme et sans installation externe.
+Ce répertoire contient toutes les **bibliothèques tierces** utilisé dans notre SDK.
 
-L’objectif est simple :  
-➡️ **aucune dépendance à installer pour l’utilisateur final**  
-➡️ **des versions stables et contrôlées**  
-➡️ **des builds reproductibles sur toutes les plateformes**
 
 ---
 
-## 📚 Dépendances incluses
+## 📚 Dépendances 
+
 
 ### ✔ 1. OpenSSL (TLS & Cryptographie)  
-Dossier : `deps/openssl/`
+
 
 Utilisé pour :
 
@@ -30,20 +25,13 @@ Utilisé pour :
 - Gestion des certificats  
 - Fonctions cryptographiques (SHA, AES, RSA, etc.)
 
-Contenu :
 
-- `bin/` → DLL / SO / DYLIB  
-- `lib/` → bibliothèques statiques et d’importation  
-- `include/` → en-têtes publics OpenSSL  
-
-Version : **OpenSSL 3.5.x LTS (support jusqu’en 2030)**  
-Licence : **Apache 2.0 + OpenSSL Exception**  
-Voir : `deps/openssl/LICENSE.txt`
+Licence incluse dans : `docs/legal/OpenSSL/LICENSE.txt`
 
 ---
 
-### ✔ 2. f90GL (Bindings Fortran pour OpenGL)  
-Dossier : `deps/f90gl/`
+### ✔ 2. f90GL (Bindings Fortran95 pour OpenGL)  
+
 
 Utilisé pour :
 
@@ -52,20 +40,23 @@ Utilisé pour :
 - Modules UI futurs du SDK
 
 
-Licence : incluse dans `deps/f90gl/LICENSE.txt`
+Licence incluse dans : `docs/legal/f90gl/LICENSE.txt`
 
 ---
 
-## 🧱 Pourquoi intégrer les dépendances ?
+### ✔ 3. LunarG (Bindings Fortran95 pour Vulkan)  
 
-- Builds reproductibles  
-- Aucun prérequis externe  
-- Comportement identique sur toutes les plateformes  
-- Simplification maximale pour les utilisateurs du SDK  
-- Contrôle total des versions et de l’ABI
+
+Utilisé pour :
+
+- Rendu graphique  
+- Visualisation  
+- Modules UI futurs du SDK
+
+
+Licence incluse dans : `docs/legal/LunarG/LICENSE.txt`
 
 ---
-
 
 ## 🤝 Crédits
 
@@ -86,21 +77,14 @@ Veuillez consulter les fichiers LICENSE de chaque dépendance pour plus d’info
 
 # External Dependencies — GF‑Fortran‑SDK
 
-This directory contains all **third‑party libraries** bundled with the  
-**GF‑Fortran‑SDK**, providing a fully self‑contained, cross‑platform development  
-environment.
-
-The goal is simple:  
-➡️ **no external installation required**  
-➡️ **stable, controlled versions**  
-➡️ **reproducible builds across all platforms**
+This directory contains all **third‑party libraries** use in our SDK.
 
 ---
 
-## 📚 Included Dependencies
+## 📚  Dependencies
+
 
 ### ✔ 1. OpenSSL (TLS & Cryptography)  
-Folder: `deps/openssl/`
 
 Used for:
 
@@ -109,14 +93,11 @@ Used for:
 - Cryptographic primitives (SHA, AES, RSA, etc.)
 
 
-Version: **OpenSSL 3.5.x LTS (supported until 2030)**  
-License: **Apache 2.0 + OpenSSL Exception**  
-See: `deps/openssl/LICENSE.txt`
+Licence under : `docs/legal/OpenSSL/LICENSE.txt`
 
 ---
 
-### ✔ 2. f90GL (Fortran OpenGL Bindings)  
-Folder: `deps/f90gl/`
+### ✔ 2. f90GL (Fortran95 OpenGL Bindings)  
 
 Used for:
 
@@ -124,20 +105,24 @@ Used for:
 - Visualization  
 - Future UI modules in the SDK
 
-License: included in `deps/f90gl/LICENSE.txt`
+
+Licence under : `docs/legal/f90gl/LICENSE.txt`
 
 ---
 
-## 🧱 Why bundle dependencies?
+### ✔ 3. LunarG (Fortran95 Vulkan Bindings)  
 
-- Reproducible builds  
-- Zero external requirements  
-- Identical behavior across platforms  
-- Simplified onboarding for SDK users  
-- Full control over versions and ABI stability
+
+used for :
+
+- Graphics rendering  
+- Visualization  
+- Future UI modules in the SDK
+
+
+Licence under : `docs/legal/LunarG/LICENSE.txt`
 
 ---
-
 
 ## 🤝 Credits
 
