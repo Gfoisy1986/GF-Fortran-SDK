@@ -29,7 +29,7 @@ Licence incluse dans : `docs/legal/OpenSSL/LICENSE.txt`
 
 ---
 
-### ✔ 2. f90GL (Bindings Fortran95 pour OpenGL)  
+### ✔ 2. f90GL SDK
 
 
 Utilisé pour :
@@ -37,13 +37,13 @@ Utilisé pour :
 - Rendu graphique  
 - Visualisation  
 - Modules UI futurs du SDK
-
+(OpenGL Bindings) -> Fortran95 API
 
 Licence incluse dans : `docs/legal/f90gl/LICENSE.txt`
 
 ---
 
-### ✔ 3. LunarG (Bindings Fortran95 pour Vulkan)  
+### ✔ 3. LunarG SDK
 
 
 Utilisé pour :
@@ -51,7 +51,7 @@ Utilisé pour :
 - Rendu graphique  
 - Visualisation  
 - Modules UI futurs du SDK
-
+(Vulkan Bindings) -> Fortran95 API
 
 Licence incluse dans : `docs/legal/LunarG/LICENSE.txt`
 
@@ -96,28 +96,28 @@ Licence under : `docs/legal/OpenSSL/LICENSE.txt`
 
 ---
 
-### ✔ 2. f90GL (Fortran95 OpenGL Bindings)  
+### ✔ 2. f90GL SDK  
 
 Used for:
 
 - Graphics rendering  
 - Visualization  
-- Future UI modules in the SDK
-
+- Future UI & API modules in the SDK
+(OpenGL Bindings) -> Fortran95 API
 
 Licence under : `docs/legal/f90gl/LICENSE.txt`
 
 ---
 
-### ✔ 3. LunarG (Fortran95 Vulkan Bindings)  
+### ✔ 3. LunarG SDK  
 
 
 used for :
 
 - Graphics rendering  
 - Visualization  
-- Future UI modules in the SDK
-
+- Future UI & API modules in the SDK
+(Vulkan Bindings) -> Fortran95 API
 
 Licence under : `docs/legal/LunarG/LICENSE.txt`
 
