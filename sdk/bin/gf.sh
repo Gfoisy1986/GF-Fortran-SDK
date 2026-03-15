@@ -16,4 +16,4 @@ fi
 GF_SDK_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 # Run GF CLI
-lua "$GF_SDK_ROOT/tools/gf.lua" "$@"
+lua "$GF_SDK_ROOT/scripts/gf.lua" "$@"

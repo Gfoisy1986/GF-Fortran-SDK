@@ -57,7 +57,7 @@ if p then
                     and ('where ' .. name .. ' >nul 2>nul')
                     and ('command -v ' .. name .. ' >/dev/null 2>&1')
 
-                    local ok = os.execute(cmd)
+                    local ok = os.execute()   --os.execute(cmd) remove boolean and work :D
                     return ok == true or ok == 0
                     end
 
