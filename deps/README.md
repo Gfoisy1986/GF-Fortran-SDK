@@ -36,7 +36,7 @@ Utilisé pour :
 
 - Rendu graphique  
 - Visualisation  
-- Modules UI futurs du SDK
+- Modules UI & API futurs du SDK
 (OpenGL Bindings) -> Fortran95 API
 
 Licence incluse dans : `docs/legal/f90gl/LICENSE.txt`
@@ -50,7 +50,7 @@ Utilisé pour :
 
 - Rendu graphique  
 - Visualisation  
-- Modules UI futurs du SDK
+- Modules UI & API futurs du SDK
 (Vulkan Bindings) -> Fortran95 API
 
 Licence incluse dans : `docs/legal/LunarG/LICENSE.txt`
